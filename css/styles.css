@@ -1,0 +1,144 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #F5F5F5;
+    color:#1A1A1A;
+    font-size: calc(1.8rem,calc(7vw+1rem),5rem);
+}
+
+.header{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: clamp(1rem, 2vw, 12rem); /* Increased font size */
+    margin:30px;
+}
+
+.header a,.content a,.contentTable a,.contentContact a{
+    text-decoration: none;
+    color:#1A1A1A;
+    font-weight: bold;
+}
+
+.content a, .contentTable a,.contentContact a{
+    font-weight: bold;
+}
+
+.header a:hover{
+    text-decoration: none;
+    color:#1A1A1A;
+    transform: scale(1.3);
+}
+
+#fotoProfilo{
+    max-width: 100%;
+    width: 30%;
+    height: 30%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.title,#title{
+    margin:20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tableArticle tr{
+    border:1px solid #1A1A1A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    max-width: 650px;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 1px solid #1A1A1A;
+    margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+    table {
+        max-width: 100%;
+        font-size: 0.9em;
+    }
+    td, th {
+        padding: 0.5em;
+    }
+}
+
+thead{
+    color:#F5F5F5;
+    background-color: #1A1A1A;
+    height: 50px;
+}
+
+
+td{
+    padding: min(0.5em,10%);
+}
+
+#orari{
+    width: 230px;
+}
+
+.contentTable{
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.contentContact{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu{
+    border-radius: 5px;
+    height: 50px;
+    background-color: #F5F5F5;
+}
+
+#menu:hover{
+    cursor: pointer;
+}
+
+.hidden{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+textarea{
+    height: 40px;
+    width: 400px;
+}
+
+.tipiVisita{
+    margin:1% 0;
+    padding: min(0.5em,5%);
+    border:1px solid #1A1A1A;
+    border-radius: 5px;
+    font-size: calc(7rem,calc(10vw+1),8rem);
+}
+
+#bottoneTitolo{
+    appearance: none;
+    background-color: #F5F5F5;
+    border:0px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+}
