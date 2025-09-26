@@ -1,3 +1,8 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
 body{
     font-family: 'Times New Roman', Times, serif;
     background-color: #F5F5F5;
@@ -6,16 +11,49 @@ body{
 }
 
 .header{
+    background-color: #1A1A1A;
+    color: #F5F5F5;
+    height: 60px;
     display: flex;
-    justify-content: space-evenly;
-    font-size: clamp(1rem, 2vw, 12rem); /* Increased font size */
-    margin:30px;
+    flex-direction: column;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    position: sticky;
 }
 
-.header a,.content a,.contentTable a,.contentContact a{
+.links{
+    display: flex;
+    gap: 20px;
+    margin-top: 5px;
+}
+
+.header a{
     text-decoration: none;
-    color:#1A1A1A;
+    color:#F5F5F5;
     font-weight: bold;
+}
+
+.doctor-name{
+    font-weight: bold;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.content{
+    max-width: 800px;
+    margin: 20px auto 20px auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+}
+
+.content a,.contentTable a,.contentContact a{
+    text-decoration: none;
+    color: #1A1A1A;
+    font-weight: bold;
+
 }
 
 .content a, .contentTable a,.contentContact a{
@@ -24,23 +62,40 @@ body{
 
 .header a:hover{
     text-decoration: none;
+    background-color: #F5F5F5;
     color:#1A1A1A;
-    transform: scale(1.3);
+    padding: 5px;
+    border-radius: 5px;
 }
 
 #fotoProfilo{
     max-width: 100%;
-    width: 30%;
-    height: 30%;
+    width: 20%;
+    height: 20%;
     aspect-ratio: 1/1;
+    border-radius: 5px;
     object-fit: cover;
+    margin: 20px 0 20px 0;
 }
 
-.title,#title{
-    margin:20px;
+.title{
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin:10px 0 10px 0;
+}
+
+.cv{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: 2px solid #1A1A1A;
+    border-radius: 5px;
+}
+
+.cv:hover{
+    background-color: #1A1A1A;
+    color: #F5F5F5;
 }
 
 .tableArticle tr{
@@ -77,9 +132,13 @@ thead{
     height: 50px;
 }
 
-
 td{
     padding: min(0.5em,10%);
+}
+
+th{
+    padding: min(0.5em,10%);
+    text-align: left;
 }
 
 #orari{
@@ -87,7 +146,6 @@ td{
 }
 
 .contentTable{
-    display: flex;
     display: flex;
     flex-direction: column;
     align-items: center
@@ -141,4 +199,17 @@ textarea{
     cursor: pointer;
     font-weight: bold;
     font-size: larger;
+}
+
+.title a{
+    text-decoration: none;
+    border: 2px solid #1A1A1A;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #1A1A1A;
+}
+
+.title a:hover{
+    background-color: #1A1A1A;
+    color: #F5F5F5;
 }

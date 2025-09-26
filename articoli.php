@@ -14,7 +14,6 @@
     <div class="header">
             <?php require_once("header.php"); ?>
     </div>
-
     <div class="title">
         <h1>ARTICOLI</h1>
     </div>
