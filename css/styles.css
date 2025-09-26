@@ -14,6 +14,7 @@ body{
     background-color: #1A1A1A;
     color: #F5F5F5;
     height: 60px;
+    font-size: larger;
     display: flex;
     flex-direction: column;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
@@ -70,8 +71,8 @@ body{
 
 #fotoProfilo{
     max-width: 100%;
-    width: 20%;
-    height: 20%;
+    width: 200px;
+    height: 200px;
     aspect-ratio: 1/1;
     border-radius: 5px;
     object-fit: cover;
@@ -212,4 +213,11 @@ textarea{
 .title a:hover{
     background-color: #1A1A1A;
     color: #F5F5F5;
+}
+
+#bottoneTitolo:hover{
+    background-color: #1A1A1A;
+    color: #F5F5F5;
+    padding: 5px;
+    border-radius: 5px;
 }

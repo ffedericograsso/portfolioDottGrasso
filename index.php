@@ -15,9 +15,9 @@
             <img src="https://cittasalute.it/wp-content/uploads/2023/01/grasso-1.jpg" alt="fotoProfilo" id="fotoProfilo">
             <a href="contact.php" class="button">PRENOTA UNA VISITA</a>
         </div>
-        <div class="content">
+        <div class="content hidden">
             <h2>Biografia</h2>
-            <p>Nato a Catania il 24 ottobre 1968, si e' laureato in Medicina e Chirurgia nel 1994. Ha conseguito la specializzazione in Audiologia nel 1998 presso l'Università di Catania e in Otorinolaringoiatria nel 2002 presso l'Università degli Studi di Ferrara</p>
+            <p>Nato a Catania il 24 ottobre 1968, si e' laureato in Medicina e Chirurgia nel 1994. Ha conseguito la specializzazione in Audiologia nel 1998 presso l'Università di Catania e in Otorinolaringoiatria nel 2002 presso l'Università degli Studi di Ferrara. </p>
             <a href="pdf/cv_dottGrasso.pdf" target="_blank" class="cv">CURRICULUM</a>
             <h2 class="hidden">Tipi di visite</h2>
             <p><div class="tipiVisita hidden"><b>Audiometria</b><br>

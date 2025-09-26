@@ -42,10 +42,13 @@
                                             "<td>" + contenuto + "</td>" +
                                         "</tr>";
                             }
-
+<?php
+                            if(isset($_SESSION['idUtente'])){
+                                echo "articoli += '<tr><td><a href=\"inserisciArticolo.php\" class=\"btnInserisciArticolo\">INSERISCI ARTICOLO</a></td></tr>';";
+                            }
+                    ?>
 articoli += "</table>";
-
-document.getElementById("content").innerHTML = articoli;
+                    document.getElementById("content").innerHTML = articoli;
 
                         } catch (e) {
                         }
