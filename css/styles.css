@@ -54,11 +54,6 @@ body{
     text-decoration: none;
     color: #1A1A1A;
     font-weight: bold;
-
-}
-
-.content a, .contentTable a,.contentContact a{
-    font-weight: bold;
 }
 
 .header a:hover{
@@ -154,9 +149,13 @@ th{
 
 .contentContact{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    align-items: center
+}
+
+#telefono{
+    margin-top: 10px;
+    font-size: larger;
 }
 
 #menu{
@@ -220,4 +219,11 @@ textarea{
     color: #F5F5F5;
     padding: 5px;
     border-radius: 5px;
+}
+
+#contattiTitolo{
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
 }
