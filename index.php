@@ -14,6 +14,8 @@
             <h1>Dott. Domenico Leonardo Grasso - Otorino Laringoiatra</h1>
             <img src="https://cittasalute.it/wp-content/uploads/2023/01/grasso-1.jpg" alt="fotoProfilo" id="fotoProfilo">
             <a href="#contattiTitolo" class="button">PRENOTA UNA VISITA</a>
+            <?php
+            ?>
         </div>
         <div class="content hidden">
             <h2>Biografia</h2>
@@ -34,7 +36,7 @@
 
               <div class="tipiVisita hidden"><b>Visita ORL</b><br>
               La visita otorinolaringoiatrica, o visita ORL, e' una prestazione medica che permette di valutare la salute dell'orecchio, del naso e della gola. Durante la visita, il dottore effettua una valutazione completa delle strutture dell'area testa e collo, utilizzando strumenti specifici per l'ispezione e l'esame funzionale.<br></div>
-              <h3 id="contattiTitolo">CHIAMA PER UN APPUNTAMENTO</h3>
+              <h3 id="contattiTitolo" class="hidden">CHIAMA PER UN APPUNTAMENTO</h3>
               <div class="contentContact hidden">
                 <select id="menu" onchange="mostraTelefono()">
                     <option value="">Scegli un'opzione </option>

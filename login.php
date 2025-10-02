@@ -8,14 +8,14 @@
 <body>
     <div class = 'header'> <?php require_once("header.php"); ?> </div>
     <div class="content">
-    <form action="controllaCredenziali.php" method="post">
+    <form action="controllaCredenziali.php"  method="post">
         <p>Inserisci nome</p>
-        <input type = "text" name = "nome" autocomplete="off" required>
+        <input type = "text" name = "nome" id="nome" autocomplete="off" required>
 
         <br>
 
         <p>Inserisci password</p>
-        <input type = "password" name = "pass" autocomplete="off" required>
+        <input type = "password" name = "pass" id="pass" autocomplete="off" required>
 
         <br>
 
