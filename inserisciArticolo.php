@@ -8,7 +8,7 @@
 <body>
     <div class = 'header'> <?php require_once("header.php"); ?> </div>
     <div class="content">
-    <form action="dbArticolo.php" method="post">
+    <form action="dbArticolo.php" method="post" enctype="multipart/form-data">
         <p>Inserisci titolo</p>
         <input type = "text" name = "titolo" autocomplete="off" required>
 
@@ -18,7 +18,7 @@
         <input type = "text" name = "contenuto" autocomplete="off" required>
 
         <p>Inserisci immagine di copertina:</p>
-        <input type="file" name="image" accept="image/*">
+        <input type="file" name="immagine" id="immagine" accept="image/*" required>
 
         <input name = "operazione" type = "submit" value = "Inserisci Articolo">
 
