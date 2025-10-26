@@ -11,9 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 </head> 
 <body>
-    <div class="header">
-            <?php require_once("header.php"); ?>
-    </div>
+    <?php require_once("header.php"); ?>
     <div class="title">
         <h1>ARTICOLI</h1>
     </div>

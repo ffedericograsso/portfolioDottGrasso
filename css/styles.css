@@ -3,15 +3,16 @@
     padding:0;
     box-sizing: border-box;
 }
+
 body{
     font-family: 'Times New Roman', Times, serif;
-    background-color: #F5F5F5;
-    color:#1A1A1A;
+    background-color: #CCF2FF;
+    color: #1E293B;
     font-size: calc(1.8rem,calc(7vw+1rem),5rem);
 }
 
 .header{
-    background-color: #1A1A1A;
+    background-color: #0A2540;
     color: #F5F5F5;
     height: 60px;
     font-size: larger;
@@ -21,6 +22,17 @@ body{
     align-items: center;
     justify-content: center;
     position: sticky;
+}
+
+
+#logo{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%); /* mantiene il logo verticalmente centrato */
+    height: 50px;
+    margin: 0;
+    order: 0;
 }
 
 .links{
@@ -39,27 +51,28 @@ body{
     font-weight: bold;
     margin-left: 20px;
     font-size: 20px;
+    color: #F5F5F5;
 }
 
 .content{
     max-width: 800px;
     margin: 20px auto 20px auto;
     padding: 20px;
-    background-color: #FFFFFF;
+    background-color: #F8FBFF;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+    color: #1E293B;
 }
 
 .content a,.contentTable a,.contentContact a{
     text-decoration: none;
-    color: #1A1A1A;
+    color: #0077B6;
     font-weight: bold;
 }
 
 .header a:hover{
-    text-decoration: none;
-    background-color: #F5F5F5;
-    color:#1A1A1A;
+    background-color: #0077B6;
+    color:#F5F5F5;
     padding: 5px;
     border-radius: 5px;
 }
@@ -85,17 +98,19 @@ body{
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    border: 2px solid #1A1A1A;
+    border: 2px solid #0A2540;
     border-radius: 5px;
+    color: #0A2540;
+    background-color: transparent;
 }
 
 .cv:hover{
-    background-color: #1A1A1A;
-    color: #F5F5F5;
+    background-color: #0A2540;
+    color: #CCF2FF;
 }
 
 .tableArticle tr{
-    border:1px solid #1A1A1A;
+    border:1px solid #64748B;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -108,7 +123,7 @@ table {
     max-width: 650px;
     border-radius: 30px;
     overflow: hidden;
-    border: 1px solid #1A1A1A;
+    border: 1px solid #64748B;
     margin: 0 auto;
 }
 
@@ -124,7 +139,7 @@ table {
 
 thead{
     color:#F5F5F5;
-    background-color: #1A1A1A;
+    background-color: #0A2540;
     height: 50px;
 }
 
@@ -161,11 +176,12 @@ th{
 #menu{
     border-radius: 5px;
     height: 50px;
-    background-color: #F5F5F5;
+    background-color: #B3E5FC;
 }
 
 #menu:hover{
     cursor: pointer;
+    background-color: #A2DDF7;
 }
 
 .hidden{
@@ -187,35 +203,36 @@ textarea{
 .tipiVisita{
     margin:1% 0;
     padding: min(0.5em,5%);
-    border:1px solid #1A1A1A;
+    border:1px solid #64748B;
     border-radius: 5px;
     font-size: calc(7rem,calc(10vw+1),8rem);
 }
 
 #bottoneTitolo{
     appearance: none;
-    background-color: #F5F5F5;
+    background-color: #0077B6;
     border:0px;
     cursor: pointer;
     font-weight: bold;
     font-size: larger;
+    color: #F5F5F5;
 }
 
 .title a{
     text-decoration: none;
-    border: 2px solid #1A1A1A;
+    border: 2px solid #0A2540;
     padding: 10px 20px;
     border-radius: 5px;
-    color: #1A1A1A;
+    color: #0A2540;
 }
 
 .title a:hover{
-    background-color: #1A1A1A;
+    background-color: #0A2540;
     color: #F5F5F5;
 }
 
 #bottoneTitolo:hover{
-    background-color: #1A1A1A;
+    background-color: #005F73;
     color: #F5F5F5;
     padding: 5px;
     border-radius: 5px;
@@ -226,4 +243,5 @@ textarea{
     font-weight: bold;
     font-size: larger;
     text-align: center;
+    color: #0A2540;
 }

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class = 'header'> <?php require_once("header.php"); ?> </div>
+    <?php require_once("header.php"); ?>
     <div class="content">
     <form action="dbArticolo.php" method="post" enctype="multipart/form-data">
         <p>Inserisci titolo</p>

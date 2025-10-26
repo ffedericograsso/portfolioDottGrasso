@@ -7,9 +7,7 @@
 
    </head> 
    <body>
-        <div class="header">
-            <?php require_once("header.php"); ?>
-        </div>
+        <?php require_once("header.php"); ?>
         <div class="title">
             <h1>DOVE PUOI TROVARMI</h1>
         </div>

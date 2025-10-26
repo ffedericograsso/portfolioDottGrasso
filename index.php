@@ -6,12 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">  
      </head> 
    <body>
-
-        <div class="header">
-            <?php require_once("header.php"); ?>
-        </div>
+  
+        <?php require_once("header.php"); ?>
         <div class="title">
-            <h1>Dott. Domenico Leonardo Grasso - Otorino Laringoiatra</h1>
+            <h1>Dott. Domenico Leonardo Grasso - Otorino-Laringoiatra</h1>
             <img src="https://cittasalute.it/wp-content/uploads/2023/01/grasso-1.jpg" alt="fotoProfilo" id="fotoProfilo">
             <a href="#contattiTitolo" class="button">PRENOTA UNA VISITA</a>
             <?php

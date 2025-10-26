@@ -8,9 +8,7 @@
 
    </head> 
    <body>
-        <div class="header">
-            <?php require_once("header.php"); ?>
-        </div>
+        <?php require_once("header.php"); ?>
         <div id="title">
         </div>
         <div id="content">
