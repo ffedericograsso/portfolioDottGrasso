@@ -16,7 +16,10 @@
         <h1>ARTICOLI</h1>
     </div>
     <div id="content"></div>
-    <script>
+    <?php require_once("footer.php"); ?>
+</body>
+</html>
+<script>
         document.addEventListener("DOMContentLoaded", function() {
 
             // Funzione per caricare tutti gli articoli
@@ -63,5 +66,3 @@ articoli += "</table>";
 
         });
     </script>
-</body>
-</html>

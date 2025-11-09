@@ -24,6 +24,17 @@ body{
     position: sticky;
 }
 
+.footer{
+    background-color: #0A2540;
+    color: #F5F5F5;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: small;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
 
 #logo{
     position: absolute;
@@ -171,6 +182,11 @@ th{
 #telefono{
     margin-top: 10px;
     font-size: larger;
+}
+
+#placeLink:hover{
+    text-decoration: underline;
+   
 }
 
 #menu{

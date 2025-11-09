@@ -1,5 +1,5 @@
 <div class="header">
-    <img src="img/testaPapa.png" alt="Logo" id="logo">
+    <img src="img/testaICON.png" alt="Logo" id="logo">
     <div class="name">
         <p class="doctor-name">Dott. Domenico Leonardo Grasso</p>
     </div>

@@ -9,7 +9,7 @@
   
         <?php require_once("header.php"); ?>
         <div class="title">
-            <h1>Dott. Domenico Leonardo Grasso - Otorino-Laringoiatra</h1>
+            <h1>Dott. Domenico Leonardo Grasso - OtorinoLaringoiatra</h1>
             <img src="https://cittasalute.it/wp-content/uploads/2023/01/grasso-1.jpg" alt="fotoProfilo" id="fotoProfilo">
             <a href="#contattiTitolo" class="button">PRENOTA UNA VISITA</a>
             <?php
@@ -50,6 +50,8 @@
                 </select>
                 <div id="telefono"></div>
         </div>
+        </div>
+        <?php require_once("footer.php"); ?>
    </body>
 </html>
 <script>

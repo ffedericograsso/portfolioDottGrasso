@@ -1,5 +1,4 @@
 <?php
-/*codice php per inserire i dati di un articolo nel database*/
 require_once("functions/modulo.php");
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -7,7 +6,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// --> Usa $_FILES per gli upload, non $_POST
 if (!isset($_FILES['immagine'])) {
     exit('Nessun file inviato. Verifica name="immagine" nel form e enctype="multipart/form-data".');
 }
