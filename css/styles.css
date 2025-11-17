@@ -8,20 +8,65 @@ body{
     font-family: 'Times New Roman', Times, serif;
     background-color: #CCF2FF;
     color: #1E293B;
-    font-size: calc(1.8rem,calc(7vw+1rem),5rem);
+    font-size: clamp(14px, 1.8vw, 20px);
 }
 
 .header{
-    background-color: #0A2540;
-    color: #F5F5F5;
     height: 60px;
     font-size: larger;
     display: flex;
-    flex-direction: column;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-end;
+    position: relative;
     justify-content: center;
-    position: sticky;
+    padding: 0 20px;
+}
+
+#logo{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50px;
+    display: block;
+    z-index: 2;
+}
+
+.links{
+    display: flex;
+    gap: 12px;
+    margin-top: 0;
+    align-items: flex-end;
+}
+
+.header a{
+    text-decoration: none;
+    color: #0A2540;
+    font-weight: bold;
+    display: inline-block;
+    padding: 4px 6px;
+    line-height: 1;
+}
+
+.header a.buttonTitle {
+    color: #F5F5F5;
+    background-color: #0A2540;
+    border-color: #0A2540;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 10px;
+    z-index: 3;
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+.header a.buttonTitle:hover {
+    background-color: #005F73;
+    border-color: #005F73;
+    color: #F5F5F5;
+    text-decoration: none;
 }
 
 .footer{
@@ -36,38 +81,9 @@ body{
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
 }
 
-#logo{
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%); /* mantiene il logo verticalmente centrato */
-    height: 50px;
-    margin: 0;
-    order: 0;
-}
-
-.links{
-    display: flex;
-    gap: 20px;
-    margin-top: 5px;
-}
-
-.header a{
-    text-decoration: none;
-    color:#F5F5F5;
-    font-weight: bold;
-}
-
-.doctor-name{
-    font-weight: bold;
-    margin-left: 20px;
-    font-size: 20px;
-    color: #F5F5F5;
-}
-
 .content{
     max-width: 800px;
-    margin: 20px auto 20px auto;
+    margin: 20px auto 70px auto;
     padding: 20px;
     background-color: #F8FBFF;
     border-radius: 10px;
@@ -79,13 +95,6 @@ body{
     text-decoration: none;
     color: #0077B6;
     font-weight: bold;
-}
-
-.header a:hover{
-    background-color: #0077B6;
-    color:#F5F5F5;
-    padding: 5px;
-    border-radius: 5px;
 }
 
 #fotoProfilo{
@@ -100,9 +109,33 @@ body{
 
 .title{
     display: flex;
-    align-items: center;
     flex-direction: column;
-    margin:10px 0 10px 0;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.nameDoc{
+    display: block;
+    margin: 0;
+    text-align: center;
+    font-size: clamp(20px, 2.2vw, 34px); /* più piccolo e adattivo */
+    line-height: 1.05;
+    max-width: 760px;         /* evita che si espanda troppo */
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    padding-right: 0;         /* rimuove spazi che possono separare dal logo */
+}
+
+#fotoProfilo{
+    order: 2;
+    margin: 0;                /* nessun margin che lo spinga a destra */
+    width: 160px;             /* dimensione più contenuta per stare vicino al testo */
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 .cv{
@@ -135,7 +168,7 @@ table {
     border-radius: 30px;
     overflow: hidden;
     border: 1px solid #64748B;
-    margin: 0 auto;
+    margin: 0 auto 50px auto;
 }
 
 @media (max-width: 700px) {
@@ -216,6 +249,11 @@ textarea{
     width: 400px;
 }
 
+
+h2{
+    text-align: center;
+}
+
 .tipiVisita{
     margin:1% 0;
     padding: min(0.5em,5%);
@@ -224,15 +262,6 @@ textarea{
     font-size: calc(7rem,calc(10vw+1),8rem);
 }
 
-#bottoneTitolo{
-    appearance: none;
-    background-color: #0077B6;
-    border:0px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: larger;
-    color: #F5F5F5;
-}
 
 .title a{
     text-decoration: none;
@@ -252,12 +281,4 @@ textarea{
     color: #F5F5F5;
     padding: 5px;
     border-radius: 5px;
-}
-
-#contattiTitolo{
-    margin-top: 20px;
-    font-weight: bold;
-    font-size: larger;
-    text-align: center;
-    color: #0A2540;
 }

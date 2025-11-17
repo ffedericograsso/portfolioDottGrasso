@@ -44,7 +44,6 @@
                 const titleB = document.getElementById("title");
                 titleB.innerHTML = "<h1>" + escapeHtml(response.titolo || "") + "</h1>";
 
-                // immagine (se presente)
                 let content = "";
                 if (response.path) {
                     content += "<img src='" + escapeHtml(response.path) + "' alt='immagine' style='max-width:100%;height:auto;'>";

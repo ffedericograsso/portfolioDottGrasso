@@ -6,19 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">  
      </head> 
    <body>
-  
         <?php require_once("header.php"); ?>
         <div class="title">
-            <h1>Dott. Domenico Leonardo Grasso - OtorinoLaringoiatra</h1>
-            <img src="https://cittasalute.it/wp-content/uploads/2023/01/grasso-1.jpg" alt="fotoProfilo" id="fotoProfilo">
-            <a href="#contattiTitolo" class="button">PRENOTA UNA VISITA</a>
-            <?php
-            ?>
+            <h1 class="nameDoc">Dott. Domenico Leonardo Grasso </h1>
+            <h1>Otorinolaringoiatra</h1>
+            <img src="img/fotoPapa.png" alt="fotoProfilo" id="fotoProfilo">
         </div>
         <div class="content hidden">
             <h2>Biografia</h2>
             <p>Nato a Catania il 24 ottobre 1968, si e' laureato in Medicina e Chirurgia nel 1994. Ha conseguito la specializzazione in Audiologia nel 1998 presso l'Università di Catania e in Otorinolaringoiatria nel 2002 presso l'Università degli Studi di Ferrara. </p>
             <a href="pdf/cv_dottGrasso.pdf" target="_blank" class="cv">CURRICULUM</a>
+        </div>
+        <div class="content hidden">
             <h2 class="hidden">Tipi di visite</h2>
             <p><div class="tipiVisita"><b>Audiometria</b><br>
               L'audiometria e' un esame non invasivo che permette di valutare la capacita' uditiva di un individuo. Viene eseguita utilizzando un apparecchio chiamato audiometro, che emette suoni a diverse frequenze e intensita'. Durante l'esame, il paziente deve segnalare ogni volta che sente il suono emesso.<br></div>
@@ -55,18 +54,22 @@
    </body>
 </html>
 <script>
+document.addEventListener('DOMContentLoaded', function() {
   const hiddenElements = document.querySelectorAll('.hidden');
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
+      } else {
+        entry.target.classList.remove('show');
       }
     });
   }, { threshold: 0.1 });
 
   hiddenElements.forEach(el => observer.observe(el));
-
+});
+</script>
+<script>
   function mostraTelefono() {
                 const menu = document.getElementById("menu").value;
                 const telefono = document.getElementById("telefono");
@@ -108,5 +111,4 @@
                     ? `<a href="tel:${numero}"> ${numero}</a>` 
                     : "";
               } 
-
 </script>
