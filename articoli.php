@@ -13,6 +13,24 @@
     <section class="articles-section">
         <h1 class="section-title">Articoli</h1>
         <p class="section-subtitle">Lista di tutti gli articoli a cui ho preso parte</p>
+        
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-wrapper">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input type="text" id="searchInput" class="search-input" placeholder="Cerca articoli per titolo o contenuto...">
+                <button id="clearSearch" class="clear-button" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
         <div id="content"></div>
     </section>
 
@@ -20,6 +38,10 @@
 
     <script>
     document.addEventListener("DOMContentLoaded", function() {
+        const searchInput = document.getElementById("searchInput");
+        const clearButton = document.getElementById("clearSearch");
+        let searchTimeout;
+
         function loadArticoli(query = "") {
             const xhttp = new XMLHttpRequest();
             xhttp.open("POST", "functions/getArticoli.php?query=" + encodeURIComponent(query), true);
@@ -29,17 +51,21 @@
                         const response = JSON.parse(this.responseText);
                         let articoli = "<table class='tableArticle'>";
                         
-                        for (let i = 0; i < response.titolo.length; i++) {
-                            let contenuto = response.contenuto[i].substring(0, 100) + "...";
-                            articoli += "<tr class='article'>" +
-                                "<td style='width: 70%;'>" +
-                                    "<form action='informazioniArticolo.php' method='get'>" +
-                                        "<input type='hidden' name='id' value='" + response.id[i] + "'>" +
-                                        "<button type='submit' id='bottoneTitolo'>" + response.titolo[i] + "</button>" +
-                                    "</form>" +
-                                "</td>" +
-                                "<td style='color: #64748B;'>" + contenuto + "</td>" +
-                            "</tr>";
+                        if (response.titolo.length === 0) {
+                            articoli += "<tr><td colspan='2' class='no-results'>Nessun articolo trovato</td></tr>";
+                        } else {
+                            for (let i = 0; i < response.titolo.length; i++) {
+                                let contenuto = response.contenuto[i].substring(0, 100) + "...";
+                                articoli += "<tr class='article'>" +
+                                    "<td style='width: 70%;'>" +
+                                        "<form action='informazioniArticolo.php' method='get'>" +
+                                            "<input type='hidden' name='id' value='" + response.id[i] + "'>" +
+                                            "<button type='submit' id='bottoneTitolo'>" + response.titolo[i] + "</button>" +
+                                        "</form>" +
+                                    "</td>" +
+                                    "<td style='color: #64748B;'>" + contenuto + "</td>" +
+                                "</tr>";
+                            }
                         }
 
                         <?php
@@ -60,6 +86,29 @@
             xhttp.send();
         }
 
+        // Search functionality
+        searchInput.addEventListener("input", function() {
+            clearTimeout(searchTimeout);
+            const query = this.value.trim();
+            
+            // Show/hide clear button
+            clearButton.style.display = query ? "flex" : "none";
+            
+            // Debounce search
+            searchTimeout = setTimeout(function() {
+                loadArticoli(query);
+            }, 300);
+        });
+
+        // Clear search
+        clearButton.addEventListener("click", function() {
+            searchInput.value = "";
+            clearButton.style.display = "none";
+            loadArticoli();
+            searchInput.focus();
+        });
+
+        // Initial load
         loadArticoli();
     });
     </script>
