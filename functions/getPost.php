@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $id = intval($_POST['id']);
 
-    $sql = "SELECT * FROM tarticolo WHERE id=$id";
+    $sql = "SELECT * FROM tpost WHERE id=$id";
     $rec = mysqli_query($db, $sql);
 
     if (!$rec) {
@@ -23,10 +23,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = [
             "id" => $arr['id'],
             "titolo" => $arr['titolo'],
+            "data" => $arr['dataPubblicazione'],
             "contenuto" => $arr['contenuto'],
+            "path" => $arr['pathFoto']
         ];
     } else {
-        $result = ["error" => "Nessun articolo trovato con id=$id"];
+        $result = ["error" => "Nessun post trovato con id=$id"];
     }
 
     header('Content-Type: application/json');

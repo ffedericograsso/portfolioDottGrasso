@@ -79,7 +79,7 @@ $titolo = $_POST['titolo'] ?? '';
 $contenuto = $_POST['contenuto'] ?? '';
 
 // inserimento sicuro nel DB
-$stmt = $db->prepare("INSERT INTO tarticolo (titolo, contenuto, pathFoto, dataPubblicazione) VALUES (?, ?, ?, NOW())");
+$stmt = $db->prepare("INSERT INTO tpost (titolo, contenuto, pathFoto, dataPubblicazione) VALUES (?, ?, ?, NOW())");
 if ($stmt === false) {
     @unlink($destPath);
     exit('Errore prepare DB: ' . $db->error);

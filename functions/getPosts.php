@@ -2,7 +2,7 @@
 require_once("modulo.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $sql = "SELECT id, titolo, contenuto FROM tarticolo";
+    $sql = "SELECT id, titolo, dataPubblicazione, contenuto FROM tpost";
     $rec = mysqli_query($db, $sql);
 
     $ids = [];
@@ -13,12 +13,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     while ($arr = mysqli_fetch_assoc($rec)) {
         $ids[] = $arr['id'];
         $titoli[] = $arr['titolo'];
+        $date[] = $arr['dataPubblicazione'];
         $contenuti[] = $arr['contenuto'];
     }
 
     $result = [
         "id" => $ids,
         "titolo" => $titoli,
+        "data" => $date,
         "contenuto" => $contenuti
     ];
 
