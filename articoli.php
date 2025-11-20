@@ -68,12 +68,6 @@
                             }
                         }
 
-                        <?php
-                        if(isset($_SESSION['idUtente'])){
-                            echo "articoli += '<tr><td colspan=\"2\" style=\"text-align: center; padding: 20px;\"><a href=\"inserisciArticolo.php\" class=\"btnInserisciArticolo\">INSERISCI ARTICOLO</a></td></tr>';";
-                        }
-                        ?>
-
                         articoli += "</table>";
                         document.getElementById("content").innerHTML = articoli;
                     } catch (e) {

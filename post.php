@@ -50,7 +50,11 @@
                     try {
                         const response = JSON.parse(this.responseText);
                         let posts = "<table class='tableArticle'>";
-                        
+                        <?php
+                        if(isset($_SESSION['idUtente'])){
+                                 echo "posts += '<tr><td colspan=\"2\" style=\"text-align: center; padding: 20px;\"><a href=\"inserisciPost.php\" class=\"btnInserisciArticolo\">INSERISCI POST</a></td></tr>';";
+                        }
+                        ?>
                         if (response.titolo.length === 0) {
                             posts += "<tr><td colspan='2' class='no-results'>Nessun post trovato</td></tr>";
                         } else {
@@ -68,11 +72,7 @@
                             }
                         }
 
-                        <?php
-                        if(isset($_SESSION['idUtente'])){
-                                 echo "posts += '<tr><td colspan=\"2\" style=\"text-align: center; padding: 20px;\"><a href=\"inserisciPost.php\" class=\"btnInserisciPost\">INSERISCI POST</a></td></tr>';";
-                        }
-                        ?>
+                        
 
                         posts += "</table>";
                         document.getElementById("content").innerHTML = posts;
