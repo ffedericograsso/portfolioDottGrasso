@@ -1083,3 +1083,127 @@ td a:hover {
         width: 100%;
     }
 }
+
+/* Post Detail Page Styles (aggiungi a styles.css) */
+.post-detail-section {
+    max-width: 900px;
+    margin: 60px auto 120px;
+    padding: 0 40px;
+}
+
+.post-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.post-title-container {
+    padding: 50px 60px 30px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.post-detail-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1.3;
+    margin: 0;
+}
+
+.post-content-container {
+    padding: 40px 60px;
+}
+
+.post-image-wrapper {
+    margin-bottom: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.post-detail-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.post-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+.post-text br {
+    margin-bottom: 8px;
+}
+
+.post-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    word-break: break-all;
+    transition: color 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.post-link:hover {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+.post-back-link {
+    padding: 40px 60px;
+    border-top: 2px solid var(--border-color);
+}
+
+.btnInserisciPost {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 32px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btnInserisciPost:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Responsive per Post */
+@media (max-width: 968px) {
+    .post-detail-title {
+        font-size: 32px;
+    }
+
+    .post-title-container,
+    .post-content-container,
+    .post-back-link {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    .post-detail-title {
+        font-size: 28px;
+    }
+
+    .post-title-container {
+        padding: 30px 20px 20px;
+    }
+
+    .post-content-container,
+    .post-back-link {
+        padding: 30px 20px;
+    }
+
+    .post-text {
+        font-size: 16px;
+    }
+}

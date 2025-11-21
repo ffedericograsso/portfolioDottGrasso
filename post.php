@@ -59,7 +59,7 @@
                             posts += "<tr><td colspan='2' class='no-results'>Nessun post trovato</td></tr>";
                         } else {
                             for (let i = 0; i < response.titolo.length; i++) {
-                                let contenuto = response.contenuto[i].substring(0, 100) + "...";
+                                let contenuto = response.contenuto[i].substring(0, 20) + "...";
                                 posts += "<tr class='article'>" +
                                     "<td style='width: 70%;'>" +
                                         "<form action='informazioniPost.php' method='get'>" +
