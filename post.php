@@ -42,6 +42,16 @@
         const clearButton = document.getElementById("clearSearch");
         let searchTimeout;
 
+        function escapeHtml(text) {
+        if (text == null) return "";
+        return String(text)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+        }
+
         function loadPosts(query = "") {
             const xhttp = new XMLHttpRequest();
             xhttp.open("POST", "functions/getPosts.php?query=" + encodeURIComponent(query), true);
@@ -59,20 +69,23 @@
                             posts += "<tr><td colspan='2' class='no-results'>Nessun post trovato</td></tr>";
                         } else {
                             for (let i = 0; i < response.titolo.length; i++) {
-                                let contenuto = response.contenuto[i].substring(0, 20) + "...";
+                                let idSafe = escapeHtml(response.id[i]);
+                                let titoloSafe = escapeHtml(response.titolo[i]);
+                                
+                                let contenutoRaw = response.contenuto[i].substring(0, 20) + "...";
+                                let contenutoSafe = escapeHtml(contenutoRaw);
+
                                 posts += "<tr class='article'>" +
                                     "<td style='width: 70%;'>" +
                                         "<form action='informazioniPost.php' method='get'>" +
-                                            "<input type='hidden' name='id' value='" + response.id[i] + "'>" +
-                                            "<button type='submit' id='bottoneTitolo'>" + response.titolo[i] + "</button>" +
+                                            "<input type='hidden' name='id' value='" + idSafe + "'>" +
+                                            "<button type='submit' id='bottoneTitolo'>" + titoloSafe + "</button>" +
                                         "</form>" +
                                     "</td>" +
-                                    "<td style='color: #64748B;'>" + contenuto + "</td>" +
+                                    "<td style='color: #64748B;'>" + contenutoSafe + "</td>" +
                                 "</tr>";
                             }
                         }
-
-                        
 
                         posts += "</table>";
                         document.getElementById("content").innerHTML = posts;

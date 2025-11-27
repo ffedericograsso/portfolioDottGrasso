@@ -82,7 +82,7 @@ $contenuto = $_POST['contenuto'] ?? '';
 $stmt = $db->prepare("INSERT INTO tpost (titolo, contenuto, pathFoto, dataPubblicazione) VALUES (?, ?, ?, NOW())");
 if ($stmt === false) {
     @unlink($destPath);
-    exit('Errore prepare DB: ' . $db->error);
+    exit("Si è verificato un errore ");
 }
 $stmt->bind_param("sss", $titolo, $contenuto, $webPath);
 

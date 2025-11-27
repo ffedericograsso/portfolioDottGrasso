@@ -74,7 +74,7 @@
             }
         };
 
-        xhttp.open("POST", "../sitopapa/functions/getPost.php", true);
+        xhttp.open("POST", "functions/getPost.php", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
         const postData = "id=" + encodeURIComponent(id || "");
