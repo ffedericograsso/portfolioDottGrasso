@@ -25,7 +25,12 @@
             $stmt->close();
 
             if ($verifica) {
-                header("Location:index.php");
+                echo "<h1>LOGIN EFFETTUATO CON SUCCESSO (STOP FORZATO)</h1>";
+                echo "Sto salvando questi dati in sessione:<br>";
+                echo "<pre>";
+                var_dump($_SESSION);
+                echo "</pre>";
+                die("Mi sono fermato qui per farti leggere.");
                 exit;
             } else {
                 ?>
