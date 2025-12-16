@@ -21,6 +21,7 @@ body {
     color: var(--text-dark);
     line-height: 1.6;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 /* Header Styles */
@@ -40,6 +41,12 @@ body {
     display: flex;
     gap: 32px;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.links p {
+    margin: 0;
 }
 
 .header a {
@@ -196,7 +203,7 @@ body {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
@@ -348,6 +355,7 @@ table {
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     border-collapse: collapse;
+    display: table;
 }
 
 thead {
@@ -385,6 +393,7 @@ td a {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
+    word-break: break-word;
 }
 
 td a:hover {
@@ -475,9 +484,11 @@ td a:hover {
 
 .article {
     border-bottom: 1px solid var(--border-color);
-    padding: 30px;
     transition: all 0.3s ease;
-    display: table-row;
+}
+
+.article td {
+    padding: 30px 20px;
 }
 
 .article:hover {
@@ -505,13 +516,14 @@ td a:hover {
     text-align: left;
     padding: 0;
     transition: color 0.3s ease;
+    word-break: break-word;
 }
 
 #bottoneTitolo:hover {
     color: var(--accent-color);
 }
 
-.btnInserisciArticolo {
+.btnInserisciArticolo, .btnInserisciPost {
     display: inline-block;
     margin-top: 20px;
     padding: 14px 32px;
@@ -523,7 +535,7 @@ td a:hover {
     transition: all 0.3s ease;
 }
 
-.btnInserisciArticolo:hover {
+.btnInserisciArticolo:hover, .btnInserisciPost:hover {
     background: var(--secondary-color);
     transform: translateY(-2px);
 }
@@ -553,6 +565,7 @@ td a:hover {
     color: var(--primary-color);
     line-height: 1.3;
     margin: 0;
+    word-wrap: break-word;
 }
 
 .article-content-container {
@@ -573,17 +586,19 @@ td a:hover {
     object-fit: cover;
 }
 
-.article-text {
+.article-text, .post-text {
     font-size: 18px;
     line-height: 1.8;
     color: var(--text-dark);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
-.article-text br {
+.article-text br, .post-text br {
     margin-bottom: 8px;
 }
 
-.article-link {
+.article-link, .post-link {
     color: var(--accent-color);
     text-decoration: none;
     font-weight: 500;
@@ -592,12 +607,12 @@ td a:hover {
     border-bottom: 1px solid transparent;
 }
 
-.article-link:hover {
+.article-link:hover, .post-link:hover {
     color: var(--secondary-color);
     border-bottom-color: var(--secondary-color);
 }
 
-.article-back-link {
+.article-back-link, .post-back-link {
     padding: 40px 60px;
     border-top: 2px solid var(--border-color);
 }
@@ -847,6 +862,7 @@ td a:hover {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-align: center;
 }
 
 .file-input-label:hover {
@@ -862,6 +878,7 @@ td a:hover {
     font-size: 14px;
     color: var(--text-light);
     padding-left: 4px;
+    word-break: break-word;
 }
 
 /* Form Actions */
@@ -939,24 +956,36 @@ td a:hover {
     transform: translateY(0);
 }
 
-/* Responsive Design */
+/* ============================================
+   RESPONSIVE DESIGN - TABLET (max-width: 968px)
+   ============================================ */
 @media (max-width: 968px) {
     .hero-content {
         grid-template-columns: 1fr;
         gap: 40px;
-        padding: 40px;
+        padding: 40px 30px;
     }
     
     .hero-text h1 {
         font-size: 36px;
+        text-align: center;
     }
     
     .hero-text .subtitle {
         font-size: 20px;
+        text-align: center;
+    }
+
+    .hero-text p {
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
     }
     
     .services-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
     
     .header {
@@ -965,7 +994,6 @@ td a:hover {
     
     .links {
         gap: 16px;
-        flex-wrap: wrap;
     }
 
     .article-detail-title {
@@ -975,43 +1003,188 @@ td a:hover {
     .article-title-container,
     .article-content-container,
     .article-back-link {
-        padding-left: 40px;
-        padding-right: 40px;
+        padding: 40px 30px;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+
+    /* Tabelle responsive su tablet */
+    table {
+        font-size: 14px;
+    }
+
+    thead th,
+    td {
+        padding: 15px 10px;
     }
 }
 
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE (max-width: 640px)
+   ============================================ */
 @media (max-width: 640px) {
+    body {
+        font-size: 15px;
+    }
+
+    /* Sezioni con padding ridotto */
     .hero-section,
     .services-section,
     .bio-section,
     .contact-section,
     .location-section,
     .articles-section,
-    .article-detail-section {
+    .article-detail-section,
+    .form-section {
         padding: 0 20px;
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
+
+    /* Header mobile */
+    .header {
+        padding: 15px 15px;
+    }
+
+    .links {
+        gap: 12px 16px;
+    }
+
+    .header a {
+        font-size: 14px;
+    }
+
+    .header a.buttonTitle {
+        padding: 10px 20px;
+        font-size: 14px;
     }
     
+    /* Hero Section mobile */
+    .hero-content {
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
     .hero-text h1 {
-        font-size: 28px;
+        font-size: 26px;
     }
     
     .hero-text .subtitle {
         font-size: 18px;
     }
-    
-    .section-title {
-        font-size: 32px;
-    }
-    
-    table {
-        font-size: 14px;
-    }
-    
-    thead th,
-    td {
-        padding: 12px;
+
+    .hero-text p {
+        font-size: 16px;
+        margin-bottom: 24px;
     }
 
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+        padding: 12px 24px;
+        font-size: 15px;
+    }
+
+    #fotoProfilo {
+        max-width: 280px;
+    }
+
+    /* Section titles mobile */
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+        font-size: 16px;
+        margin-bottom: 40px;
+        padding: 0 10px;
+    }
+
+    /* Services grid mobile */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 30px 20px;
+    }
+
+    .service-card h3 {
+        font-size: 20px;
+    }
+
+    .service-card p {
+        font-size: 15px;
+    }
+
+    /* Bio section mobile */
+    .bio-section {
+        padding: 30px 20px;
+        margin: 40px auto 60px;
+    }
+
+    .bio-section h2 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .bio-section p {
+        font-size: 16px;
+    }
+
+    /* Contact section mobile */
+    .contact-section {
+        padding: 30px 20px;
+        margin: 40px auto 60px;
+    }
+
+    .contact-section h3 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    #menu {
+        font-size: 15px;
+        padding: 14px 16px;
+    }
+
+    #telefono {
+        font-size: 20px;
+        word-break: break-word;
+    }
+
+    /* Tabelle responsive - versione mobile */
+    .location-section {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+        font-size: 13px;
+        min-width: 600px;
+    }
+    
+    thead th {
+        padding: 15px 10px;
+        font-size: 14px;
+    }
+
+    td {
+        padding: 15px 10px;
+        font-size: 13px;
+    }
+
+    /* Search bar mobile */
     .search-wrapper {
         max-width: 100%;
     }
@@ -1021,35 +1194,86 @@ td a:hover {
         padding: 12px 45px 12px 44px;
     }
 
+    .search-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Articles table mobile */
+    .tableArticle {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .article td {
+        padding: 20px 15px !important;
+    }
+
+    .article td:first-child {
+        width: 100% !important;
+    }
+
+    .article td:last-child {
+        display: block;
+        padding-top: 10px !important;
+        font-size: 14px;
+    }
+
+    #bottoneTitolo {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    /* Article detail mobile */
     .article-detail-title {
-        font-size: 28px;
+        font-size: 24px;
     }
 
     .article-title-container {
-        padding: 30px 20px 20px;
+        padding: 25px 20px 20px;
     }
 
     .article-content-container,
     .article-back-link {
-        padding: 30px 20px;
+        padding: 25px 20px;
     }
 
-    .article-text {
+    .article-text,
+    .post-text {
         font-size: 16px;
     }
 
-    /* Login responsive */
+    .article-image-wrapper {
+        margin-bottom: 25px;
+        border-radius: 8px;
+    }
+
+    .btn-back {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+
+    /* Login mobile */
+    .login-section {
+        padding: 40px 20px;
+    }
+
     .login-card {
-        padding: 40px 24px;
+        padding: 35px 20px;
     }
 
     .login-title {
-        font-size: 26px;
+        font-size: 24px;
+    }
+
+    .login-subtitle {
+        font-size: 14px;
     }
 
     .login-icon {
         width: 70px;
         height: 70px;
+        margin-bottom: 20px;
     }
 
     .login-icon svg {
@@ -1057,153 +1281,146 @@ td a:hover {
         height: 40px;
     }
 
-    /* Form responsive */
-    .form-section {
-        padding: 0 20px;
+    .form-label {
+        font-size: 14px;
     }
 
+    .form-input {
+        font-size: 15px;
+        padding: 12px 16px;
+    }
+
+    .btn-login {
+        padding: 14px 28px;
+        font-size: 15px;
+    }
+
+    /* Form insert post/article mobile */
     .form-header {
-        padding: 40px 24px 24px;
+        padding: 30px 20px 20px;
     }
 
     .form-title {
-        font-size: 28px;
+        font-size: 26px;
+    }
+
+    .form-subtitle {
+        font-size: 14px;
     }
 
     .modern-form {
-        padding: 30px 24px 40px;
+        padding: 25px 20px 35px;
+    }
+
+    .form-group {
+        margin-bottom: 24px;
+    }
+
+    .form-input,
+    .form-textarea {
+        font-size: 15px;
+        padding: 12px 16px;
+    }
+
+    .form-textarea {
+        min-height: 120px;
+    }
+
+    .file-input-label {
+        padding: 16px;
+        font-size: 14px;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .file-input-label svg {
+        width: 32px;
+        height: 32px;
     }
 
     .form-actions {
         flex-direction: column;
+        gap: 12px;
+        margin-top: 28px;
+        padding-top: 24px;
     }
 
     .btn-submit,
     .btn-cancel {
         width: 100%;
+        padding: 14px 24px;
+        font-size: 15px;
+    }
+
+    /* Footer mobile */
+    .footer {
+        padding: 25px 15px;
+        font-size: 14px;
+    }
+
+    /* Inserisci articolo/post button */
+    .btnInserisciArticolo,
+    .btnInserisciPost {
+        width: 100%;
+        text-align: center;
+        padding: 12px 24px;
+        font-size: 15px;
     }
 }
 
-/* Post Detail Page Styles (aggiungi a styles.css) */
-.post-detail-section {
-    max-width: 900px;
-    margin: 60px auto 120px;
-    padding: 0 40px;
-}
-
-.post-container {
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.post-title-container {
-    padding: 50px 60px 30px;
-    border-bottom: 2px solid var(--border-color);
-}
-
-.post-detail-title {
-    font-size: 42px;
-    font-weight: 700;
-    color: var(--primary-color);
-    line-height: 1.3;
-    margin: 0;
-}
-
-.post-content-container {
-    padding: 40px 60px;
-}
-
-.post-image-wrapper {
-    margin-bottom: 40px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-
-.post-detail-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
-.post-text {
-    font-size: 18px;
-    line-height: 1.8;
-    color: var(--text-dark);
-}
-
-.post-text br {
-    margin-bottom: 8px;
-}
-
-.post-link {
-    color: var(--accent-color);
-    text-decoration: none;
-    font-weight: 500;
-    word-break: break-all;
-    transition: color 0.3s ease;
-    border-bottom: 1px solid transparent;
-}
-
-.post-link:hover {
-    color: var(--secondary-color);
-    border-bottom-color: var(--secondary-color);
-}
-
-.post-back-link {
-    padding: 40px 60px;
-    border-top: 2px solid var(--border-color);
-}
-
-.btnInserisciPost {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 14px 32px;
-    background: var(--primary-color);
-    color: white;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.btnInserisciPost:hover {
-    background: var(--secondary-color);
-    transform: translateY(-2px);
-}
-
-/* Responsive per Post */
-@media (max-width: 968px) {
-    .post-detail-title {
-        font-size: 32px;
+/* ============================================
+   RESPONSIVE DESIGN - EXTRA SMALL (max-width: 480px)
+   ============================================ */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 24px;
     }
 
-    .post-title-container,
-    .post-content-container,
-    .post-back-link {
-        padding-left: 40px;
-        padding-right: 40px;
-    }
-}
-
-@media (max-width: 640px) {
-    .post-detail-title {
-        font-size: 28px;
-    }
-
-    .post-title-container {
-        padding: 30px 20px 20px;
-    }
-
-    .post-content-container,
-    .post-back-link {
-        padding: 30px 20px;
-    }
-
-    .post-text {
+    .hero-text .subtitle {
         font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .section-subtitle {
+        font-size: 15px;
+    }
+
+    .service-card {
+        padding: 25px 15px;
+    }
+
+    .bio-section h2,
+    .contact-section h3 {
+        font-size: 24px;
+    }
+
+    .article-detail-title {
+        font-size: 22px;
+    }
+
+    .login-title {
+        font-size: 22px;
+    }
+
+    .form-title {
+        font-size: 24px;
+    }
+
+    #telefono {
+        font-size: 18px;
+    }
+
+    /* Tabella ancora più compatta */
+    table {
+        min-width: 550px;
+        font-size: 12px;
+    }
+
+    thead th,
+    td {
+        padding: 12px 8px;
     }
 }
