@@ -6,13 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">  
    </head> 
    <body>
-        <?php require_once("header.php");
-        session_start();
-        echo "<pre>";
-        var_dump($_SESSION);
-        echo "</pre>";
-        die("Fine debug");
-        ?>
+        <?php require_once("header.php");?>
         
         
         <article class="article-detail-section">

@@ -1424,3 +1424,199 @@ td a:hover {
         padding: 12px 8px;
     }
 }
+
+/* ============================================
+   TABELLE RESPONSIVE 
+   ============================================ */
+
+/* Location Table - Desktop */
+.location-section table,
+.articles-section .tableArticle {
+    display: table;
+}
+
+/* ============================================
+   RESPONSIVE TABLES - TABLET (max-width: 968px)
+   ============================================ */
+@media (max-width: 968px) {
+    /* Location table diventa più compatta */
+    .location-section table {
+        font-size: 14px;
+    }
+
+    .location-section thead th,
+    .location-section td {
+        padding: 12px 10px;
+    }
+
+    /* Articles/Blog - riduci padding */
+    .tableArticle .article td {
+        padding: 20px 15px !important;
+    }
+
+    #bottoneTitolo {
+        font-size: 18px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE TABLES - MOBILE (max-width: 768px)
+   ============================================ */
+@media (max-width: 768px) {
+    
+    /* ========== LOCATION TABLE - CARD LAYOUT ========== */
+    .location-section table {
+        display: block;
+        overflow: visible;
+    }
+
+    .location-section thead {
+        display: none; /* Nascondi header su mobile */
+    }
+
+    .location-section tbody {
+        display: block;
+    }
+
+    .location-section tbody tr {
+        display: block;
+        margin-bottom: 20px;
+        border: 2px solid var(--border-color);
+        border-radius: 12px;
+        padding: 20px;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .location-section tbody tr:hover {
+        background: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .location-section td {
+        display: block;
+        text-align: left !important;
+        padding: 10px 0 !important;
+        border: none !important;
+        font-size: 15px;
+    }
+
+    .location-section td:first-child {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--primary-color);
+        padding-bottom: 15px !important;
+        margin-bottom: 10px;
+        border-bottom: 2px solid var(--border-color) !important;
+    }
+
+    .location-section td:before {
+        content: attr(data-label);
+        display: block;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 5px;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .location-section td:first-child:before {
+        display: none; /* Non mostrare label per il nome studio */
+    }
+
+    /* ========== ARTICLES/BLOG TABLE - STACK LAYOUT ========== */
+    .tableArticle {
+        display: block;
+        overflow: visible;
+    }
+
+    .tableArticle .article {
+        display: block;
+        margin-bottom: 15px;
+        border: 2px solid var(--border-color);
+        border-radius: 12px;
+        padding: 20px;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .tableArticle .article:hover {
+        background: #f8fafc;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .tableArticle .article td {
+        display: block;
+        width: 100% !important;
+        padding: 0 !important;
+        border: none;
+    }
+
+    .tableArticle .article td:first-child {
+        margin-bottom: 12px;
+    }
+
+    .tableArticle .article td:last-child {
+        color: var(--text-light) !important;
+        font-size: 14px;
+        line-height: 1.6;
+        padding-top: 12px !important;
+        margin-top: 12px;
+        border-top: 1px solid var(--border-color);
+    }
+
+    #bottoneTitolo {
+        font-size: 17px;
+        line-height: 1.4;
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Inserisci articolo button su mobile */
+    .tableArticle tr:first-child td {
+        padding: 0 !important;
+        margin-bottom: 20px;
+        border: none !important;
+    }
+
+    .btnInserisciArticolo, .btnInserisciPost {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 14px 24px;
+        margin: 0;
+    }
+
+    /* No results message */
+    .no-results {
+        padding: 40px 20px !important;
+        text-align: center;
+        border-radius: 12px;
+    }
+}
+
+/* ============================================
+   EXTRA SMALL MOBILE (max-width: 480px)
+   ============================================ */
+@media (max-width: 480px) {
+    .location-section tbody tr {
+        padding: 15px;
+    }
+
+    .location-section td {
+        font-size: 14px;
+    }
+
+    .location-section td:first-child {
+        font-size: 16px;
+    }
+
+    .tableArticle .article {
+        padding: 15px;
+    }
+
+    #bottoneTitolo {
+        font-size: 16px;
+    }
+}
