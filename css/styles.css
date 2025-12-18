@@ -20,6 +20,7 @@ body {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     color: var(--text-dark);
     line-height: 1.6;
+    min-height: 75vh;
     font-size: 16px;
     overflow-x: hidden;
 }
@@ -939,6 +940,7 @@ td a:hover {
     background: var(--primary-color);
     color: white;
     text-align: center;
+    height: 12.5vh;
     padding: 30px 20px;
     margin-top: auto;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
