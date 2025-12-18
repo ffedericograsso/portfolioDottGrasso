@@ -38,7 +38,7 @@
         <p style="margin-top: 20px;">Nato a Catania il 24 ottobre 1968, mi sono laureato in Medicina e Chirurgia nel 1994, iniziando un percorso di eccellenza nel campo dell'otorinolaringoiatria.</p>
         <p>Ho conseguito la specializzazione in Audiologia nel 1998 presso l'Università di Catania, approfondendo le competenze nella diagnosi e trattamento dei disturbi uditivi.</p>
         <p>Nel 2002 ho completato la specializzazione in Otorinolaringoiatria presso l'Università degli Studi di Ferrara, consolidando la mia expertise nella cura delle patologie di orecchio, naso e gola.</p>
-        <p>Dal 2003 lavoro come dirigente medico presso IRCCS OSPEDALE BURLO GAROFOLO a Trieste, maturando una vasta esperienza clinica e chirurgica.</p>
+        <p>Dal 2003 lavoro come dirigente medico presso IRCCS OSPEDALE BURLO GAROFOLO a Trieste.</p>
         <p>Nel 2024 inoltre, ho conseguito un Master in riabilitazione maxillo-facciale presso l'Unicamillus di Roma, ampliando le mie competenze nel trattamento delle disfunzioni maxillo-facciali.</p>
     </section>
 
