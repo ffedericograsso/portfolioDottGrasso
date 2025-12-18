@@ -1047,11 +1047,22 @@ td a:hover {
 
     /* Header mobile */
     .header {
-        padding: 15px 15px;
+        padding: 10px 15px;
     }
 
     .links {
-        gap: 12px 16px;
+        gap: 10px; /* Riduce lo spazio tra i link */
+        justify-content: space-between; /* Distribuisce meglio i link */
+        width: 100%;
+    }
+
+    .links p {
+        font-size: 13px; /* Testo leggermente più piccolo per far stare tutto su una riga */
+    }
+    
+    .links p a {
+        padding: 5px 8px; /* Aumenta l'area cliccabile */
+        display: block;
     }
 
     .header a {
@@ -1167,23 +1178,59 @@ td a:hover {
 
     /* Tabelle responsive - versione mobile */
     .location-section {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+        overflow-x: hidden; /* Nasconde lo scroll orizzontale indesiderato */
+        padding: 0 10px;
     }
 
     table {
-        font-size: 13px;
-        min-width: 600px;
+        width: 100%;       /* Occupa il 100% dello schermo, non 600px */
+        min-width: 0;      /* Rimuove il blocco della larghezza minima */
+        display: block;    /* Trasforma la tabella in blocchi impilati */
+        font-size: 14px;
+        box-shadow: none;  /* Rimuove ombre esterne che potrebbero tagliare */
+        background: transparent;
     }
     
-    thead th {
-        padding: 15px 10px;
-        font-size: 14px;
+    thead {
+        display: none; /* Nasconde l'intestazione della tabella su mobile */
+    }
+
+    tbody {
+        display: block;
+        width: 100%;
+    }
+
+    /* Trasforma ogni riga (TR) in una "Card" */
+    tr {
+        display: flex;
+        flex-direction: column;
+        background: white;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        border: 1px solid var(--border-color);
+        padding: 15px;
     }
 
     td {
-        padding: 15px 10px;
-        font-size: 13px;
+        display: block;
+        width: 100%;
+        padding: 8px 0;
+        text-align: left;
+        border: none;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    td:last-child {
+        border-bottom: none;
+    }
+
+    /* Stile specifico per il messaggio "Nessun post trovato" */
+    .no-results {
+        text-align: center !important;
+        padding: 30px 10px !important;
+        background: transparent;
+        color: var(--text-light);
     }
 
     /* Search bar mobile */
