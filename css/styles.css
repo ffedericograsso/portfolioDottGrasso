@@ -1142,31 +1142,103 @@ td a:hover {
 
     /* Bio section mobile */
     .bio-section {
-        padding: 30px 20px;
-        margin: 40px auto 60px;
+    padding: 30px 15px !important;
+    margin: 40px 15px 60px !important;
+    width: calc(100% - 30px) !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
     }
 
     .bio-section h2 {
         font-size: 26px;
         margin-bottom: 20px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .bio-section p {
         font-size: 16px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        line-height: 1.7;
+        margin-bottom: 15px;
     }
 
-    /* Contact section mobile */
+    .bio-section strong {
+        display: inline;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Link CV */
+    .cv-link {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 24px;
+        font-size: 15px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Services section mobile - VERIFICA */
+    .services-section {
+        padding: 40px 15px 60px !important;
+        margin: 40px auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .services-grid {
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    .service-card {
+        padding: 25px 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .service-card h3 {
+        font-size: 20px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        line-height: 1.4;
+    }
+
+    .service-card p {
+        font-size: 15px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        line-height: 1.6;
+    }
+
+    /* Contact section mobile - VERIFICA */
     .contact-section {
-        padding: 30px 20px;
-        margin: 40px auto 60px;
+        padding: 30px 15px !important;
+        margin: 40px 15px 60px !important;
+        width: calc(100% - 30px) !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
     }
 
     .contact-section h3 {
         font-size: 26px;
         margin-bottom: 20px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .contact-section p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     #menu {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
         font-size: 15px;
         padding: 14px 16px;
     }
@@ -1174,6 +1246,50 @@ td a:hover {
     #telefono {
         font-size: 20px;
         word-break: break-word;
+        margin-top: 20px;
+    }
+
+    #telefono a {
+        word-break: break-word;
+        display: inline-block;
+    }
+
+    /* Hero section mobile - VERIFICA */
+    .hero-section {
+        padding: 40px 15px !important;
+        margin: 40px auto !important;
+        width: 100% !important;
+    }
+
+    .hero-content {
+        padding: 30px 15px !important;
+        gap: 30px;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: 26px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .hero-text .subtitle {
+        font-size: 18px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+        margin-bottom: 24px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        line-height: 1.7;
     }
 
     /* ========== LOCATION TABLE  ========== */
