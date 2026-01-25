@@ -86,7 +86,23 @@
     <section class="contact-section hidden" id="contattiTitolo">
         <h3>Prenota un Appuntamento</h3>
 
-        <!-- Online Booking Tab -->
+        <div class="booking-tabs">
+            <button class="tab-button active" onclick="showTab('online')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+                Prenota Online
+            </button>
+            <button class="tab-button" onclick="showTab('phone')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                Prenota per Telefono
+            </button>
+        </div>
+
         <div id="onlineTab" class="tab-content active">
             <div class="miodottore-widget-container">
                 <a id="zl-url" class="zl-url" href="https://www.miodottore.it/domenico-leonardo-grasso/otorino/trieste" rel="nofollow" data-zlw-doctor="domenico-leonardo-grasso" data-zlw-type="big_with_calendar" data-zlw-opinion="false" data-zlw-hide-branding="true" data-zlw-saas-only="false" data-zlw-a11y-title="Widget di prenotazione visite mediche">Domenico Leonardo Grasso - MioDottore.it</a>
@@ -101,7 +117,6 @@
             </p>
         </div>
 
-        <!-- Phone Booking Tab -->
         <div id="phoneTab" class="tab-content">
             <p style="color: #64748B; margin-bottom: 20px;">Scegli uno studio per visualizzare il numero di telefono</p>
             <select id="menu" onchange="mostraTelefono()">
