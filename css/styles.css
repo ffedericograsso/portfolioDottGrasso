@@ -286,7 +286,7 @@ body {
 
 /* Contact Section */
 .contact-section {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 80px auto 120px;
     padding: 50px;
     background: white;
@@ -300,6 +300,76 @@ body {
     font-weight: 700;
     color: var(--primary-color);
     margin-bottom: 30px;
+}
+
+/* Booking Tabs */
+.booking-tabs {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: white;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.tab-button:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.tab-button.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.tab-button svg {
+    flex-shrink: 0;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* MioDottore Widget Container */
+.miodottore-widget-container {
+    margin: 30px auto;
+    max-width: 800px;
+}
+
+.widget-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.widget-info svg {
+    flex-shrink: 0;
+    color: var(--accent-color);
 }
 
 #menu {
@@ -1021,11 +1091,22 @@ td a:hover {
     td {
         padding: 15px 10px;
     }
+
+    /* Tab buttons responsive */
+    .booking-tabs {
+        gap: 12px;
+    }
+
+    .tab-button {
+        padding: 12px 20px;
+        font-size: 15px;
+    }
 }
 
 /* ============================================
    RESPONSIVE DESIGN - MOBILE (max-width: 640px)
    ============================================ */
+
 @media (max-width: 640px) {
     body {
         font-size: 15px;

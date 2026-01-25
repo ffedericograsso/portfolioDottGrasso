@@ -11,7 +11,6 @@
 <body>
     <?php require_once("header.php"); ?>
     
-    <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-content">
             <div class="hero-text">
@@ -29,7 +28,6 @@
         </div>
     </section>
 
-    <!-- Biography Section -->
     <section class="bio-section hidden">
         <h2>Chi Sono</h2>
         <p><strong>Nascita:</strong> 24 Ottobre 1968, Catania</p>
@@ -42,7 +40,6 @@
         <p>Nel 2024 inoltre, ho conseguito un Master in riabilitazione maxillo-facciale presso l'Unicamillus di Roma, ampliando le mie competenze nel trattamento delle disfunzioni maxillo-facciali.</p>
     </section>
 
-    <!-- Services Section -->
     <section class="services-section hidden">
         <h2 class="section-title">Servizi Offerti</h2>
         <p class="section-subtitle">Diagnosi e trattamento completo per tutte le patologie otorinolaringoiatriche</p>
@@ -86,27 +83,67 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact-section hidden" id="contattiTitolo">
         <h3>Prenota un Appuntamento</h3>
-        <p style="color: #64748B; margin-bottom: 30px;">Contattami per fissare una visita o per maggiori informazioni sui servizi offerti</p>
+        <p style="color: #64748B; margin-bottom: 30px;">Scegli la modalità di prenotazione che preferisci</p>
         
-        <select id="menu" onchange="mostraTelefono()">
-            <option value="">Scegli uno studio</option>
-            <option value="Trieste">Studio privato TRIESTE</option>
-            <option value="Conegliano">Centro di medicina CONEGLIANO</option>
-            <option value="Treviso">Centro di medicina TREVISO</option>
-            <option value="SanDona">Centro di medicina SAN DONA' DI PIAVE</option>
-            <option value="Palmanova">Poliambulatorio San Marco PALMANOVA</option>
-            <option value="Martignacco">Poliambulatorio Specialistico Città della Salute MARTIGNACCO</option>
-            <option value="Pordenone">Centro di medicina PORDENONE</option>
-            <option value="Monfalcone">Domus Sanitatis MONFALCONE</option>
-            <option value="Gorizia">Nova Salus GORIZIA</option>
-        </select>
-        <div id="telefono"></div>
+        <!-- Booking Options Tabs -->
+        <div class="booking-tabs">
+            <button class="tab-button active" onclick="showTab('online')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                Prenota Online
+            </button>
+            <button class="tab-button" onclick="showTab('phone')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                Chiama lo Studio
+            </button>
+        </div>
+
+        <!-- Online Booking Tab -->
+        <div id="onlineTab" class="tab-content active">
+            <div class="miodottore-widget-container">
+                <a id="zl-url" class="zl-url" href="https://www.miodottore.it/domenico-leonardo-grasso/otorino/trieste" rel="nofollow" data-zlw-doctor="domenico-leonardo-grasso" data-zlw-type="big_with_calendar" data-zlw-opinion="false" data-zlw-hide-branding="true" data-zlw-saas-only="false" data-zlw-a11y-title="Widget di prenotazione visite mediche">Domenico Leonardo Grasso - MioDottore.it</a>
+            </div>
+            <p class="widget-info">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                Seleziona data e orario disponibili direttamente dal calendario
+            </p>
+        </div>
+
+        <!-- Phone Booking Tab -->
+        <div id="phoneTab" class="tab-content">
+            <p style="color: #64748B; margin-bottom: 20px;">Scegli uno studio per visualizzare il numero di telefono</p>
+            <select id="menu" onchange="mostraTelefono()">
+                <option value="">Scegli uno studio</option>
+                <option value="Trieste">Studio privato TRIESTE</option>
+                <option value="Conegliano">Centro di medicina CONEGLIANO</option>
+                <option value="Treviso">Centro di medicina TREVISO</option>
+                <option value="SanDona">Centro di medicina SAN DONA' DI PIAVE</option>
+                <option value="Palmanova">Poliambulatorio San Marco PALMANOVA</option>
+                <option value="Martignacco">Poliambulatorio Specialistico Città della Salute MARTIGNACCO</option>
+                <option value="Pordenone">Centro di medicina PORDENONE</option>
+                <option value="Monfalcone">Domus Sanitatis MONFALCONE</option>
+                <option value="Gorizia">Nova Salus GORIZIA</option>
+            </select>
+            <div id="telefono"></div>
+        </div>
     </section>
 
     <?php require_once("footer.php"); ?>
+
+    <!-- MioDottore Widget Script -->
+    <script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -121,6 +158,25 @@
 
         hiddenElements.forEach(el => observer.observe(el));
     });
+
+    function showTab(tabName) {
+        // Hide all tabs
+        document.querySelectorAll('.tab-content').forEach(tab => {
+            tab.classList.remove('active');
+        });
+        document.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // Show selected tab
+        if (tabName === 'online') {
+            document.getElementById('onlineTab').classList.add('active');
+            document.querySelectorAll('.tab-button')[0].classList.add('active');
+        } else {
+            document.getElementById('phoneTab').classList.add('active');
+            document.querySelectorAll('.tab-button')[1].classList.add('active');
+        }
+    }
 
     function mostraTelefono() {
         const menu = document.getElementById("menu").value;
