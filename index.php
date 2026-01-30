@@ -130,6 +130,7 @@
                 <option value="Pordenone">Centro di medicina PORDENONE</option>
                 <option value="Monfalcone">Domus Sanitatis MONFALCONE</option>
                 <option value="Gorizia">Nova Salus GORIZIA</option>
+                <option value="Mestre">Centro di medicina MESTRE</option>
             </select>
             <div id="telefono"></div>
         </div>
@@ -205,6 +206,9 @@
                 break;
             case "Gorizia":
                 numero = "+390481547073";
+                break;
+            case "Mestre":
+                numero = "0415322500";
                 break;
             default:
                 numero = "";
